@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/', fn() => redirect()->route('dashboard'));
 
 Route::middleware(['auth'])->group(function () {
+    // main
     Route::view('/dashboard', 'dashboard')->name('dashboard');
 
     Route::get('/items', [ItemController::class, 'index'])->name('items.index');
